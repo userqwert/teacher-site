@@ -31,11 +31,11 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
                     {% else %}
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
                     </li>
                     {% endif %}
                 </ul>
