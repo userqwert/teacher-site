@@ -1,5 +1,6 @@
 <!-- templates/registration/login.html -->
 {% extends "_base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}Вхід{% endblock title %}
 
@@ -8,6 +9,6 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Увійти</button>
+    <button class="btn btn-success" type="submit">Увійти</button>
 </form>
 {% endblock content %}

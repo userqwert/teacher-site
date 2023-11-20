@@ -3,11 +3,4 @@
 {% block title %}Home{% endblock title %}
 {% block content %}
 <h1>Домашня сторінка.</h1>
-{% if user.is_authenticated %}
-<p>Привіт {{ user.email }}!</p>
-<p><a href="{% url 'logout' %}">Вихід</a></p>
-{% else %}
-<p>Ти не залогінився</p>
-<a href="{% url 'login' %}">Увійти</a>
-{% endif %}
 {% endblock content %}
