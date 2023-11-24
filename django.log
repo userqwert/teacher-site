@@ -1,0 +1,16 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/school_classes/schoolclass/ HTTP/1.1" 200 12264
+"GET /admin/jsi18n/ HTTP/1.1" 200 3343
+"GET / HTTP/1.1" 200 3823
+"GET / HTTP/1.1" 200 3823
+"GET /about/ HTTP/1.1" 200 3805
+"GET / HTTP/1.1" 200 3823
+/code/django_project/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 3823
+"GET /about/ HTTP/1.1" 200 3805
+"GET /accounts/logout/ HTTP/1.1" 200 4108
+"GET / HTTP/1.1" 200 3823
+/code/django_project/settings.py changed, reloading.

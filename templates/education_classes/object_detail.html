@@ -1,0 +1,7 @@
+{% extends "_base.html" %}
+{% block title %}{{ subject.name }}{% endblock title %}
+{% block content %}
+<div class="object-detail">
+    <h2><a href="{{ subject.get_absolute_url }}">{{ subject.name }}</a></h2>
+</div>
+{% endblock content %}
