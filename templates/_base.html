@@ -10,12 +10,26 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <style>
+        body {
+            /* Добавьте ваш стиль для фонового изображения */
+            background-image: url('{% static "images/jessica-ruscello-OQSCtabGkSY-unsplash.jpg" %}');
+            background-size: cover;
+            /* чтобы изображение занимало всю ширину и высоту элемента */
+            background-position: center;
+            /* центрируем изображение */
+            background-repeat: no-repeat;
+            /* изображение не повторяется */
+        }
+
+        /* Добавьте любые другие стили, если необходимо */
+    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Bookstore</a>
+            <a class="navbar-brand" href="/">Головна сторінка</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targ\ et="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Tog\
         gle navigation">

@@ -7,7 +7,152 @@ h1 {
     color: red;
 }
 
-img.bookcover {
-    height: 300px;
+/* Общий стиль для всех ссылок */
+a {
+    color: #021930;
+    /* Цвет ссылок */
+    text-decoration: none;
+    /* Убрать подчеркивание */
+}
+
+/* Стиль для ссылок при наведении */
+a:hover {
+    text-decoration: underline;
+    /* Добавить подчеркивание при наведении */
+    color: rgb(245, 255, 62);
+}
+
+.lesson-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px;
+}
+
+.lesson-box {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.lesson-box img,
+.lesson-cover {
     width: auto;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+/* Общий стиль для контейнера урока */
+.lesson-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стиль для заголовка урока */
+.lesson-detail h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Стиль для текста урока */
+.lesson-detail p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Стиль для изображений */
+.image-box {
+    margin-top: 20px;
+}
+
+/* Стиль для файлов Docx и PDF */
+.docx-box,
+.pdf-box,
+.google-form-box {
+    margin-top: 20px;
+}
+
+.docx-box img,
+.pdf-box img,
+.google-form-box img {
+    max-width: 100%;
+    height: 150px;
+    /* Фиксированная высота */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    /* object-fit: cover; (оставить это свойство для сохранения соотношения сторон) */
+}
+
+/* Стиль для видео из YouTube */
+.youtube-box {
+    margin-top: 20px;
+}
+
+.youtube-box iframe {
+    width: 100%;
+    height: 315px;
+}
+
+/* Стиль для ссылки "Назад до списку уроків" */
+.lesson-detail a {
+    display: block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lesson-detail a:hover {
+    text-decoration: underline;
+}
+
+/* Обновленные стили */
+.files-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #23b788;
+    /* Цвет и стиль границы */
+    padding: 10px;
+    /* Добавляем отступ вокруг бокса */
+}
+
+.document-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 300px;
+    /* Фиксированная ширина общего бокса для файлов */
+}
+
+.document-box a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.document-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    align-self: flex-start;
+    /* Передвигаем изображения вверх (в начало) */
 }

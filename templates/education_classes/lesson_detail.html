@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}{{ lesson.title }}{% endblock title %}
+{% block content %}
+<div class="lesson-detail">
+    <h2>Тема уроку: {{ lesson.title }}</h2>
+    <p>якийсь письмовий текст: {{ lesson.content }}</p>
+
+    <div class="files-box">
+        <div class="document-box">
+            {% if lesson.docx_file %}
+            <a href="{{ lesson.docx_file}}" target="_blank">
+                <img src="/media/covers/google-docx.png" alt="Google Docx">
+            </a>
+            {% endif %}
+
+            {% if lesson.pdf_file %}
+            <a href="{{ lesson.pdf_file.url }}" target="_blank">
+                <img src="/media/covers/pdf.png" alt="PDF File">
+            </a>
+            {% endif %}
+
+            {% if lesson.google_form %}
+            <a href="{{ lesson.google_form}}" target="_blank">
+                <img src="/media/covers/google-form.png" alt="Google Form">
+            </a>
+            {% endif %}
+        </div>
+    </div>
+    {% if lesson.youtube_video_url %}
+    <div class="youtube-box">
+        <iframe width="560" height="315" src="{{ lesson.youtube_video_url }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+
+    <!-- Add any other details you want to display -->
+
+    <a href="{% url 'object_detail' lesson.subject.id %}">Назад до списку уроків</a>
+</div>
+{% endblock content %}
