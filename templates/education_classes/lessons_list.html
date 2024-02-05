@@ -1,0 +1,23 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}{{ subject.name }}{% endblock title %}
+{% block content %}
+<div class="object-detail-">
+    <h2><a>{{ subject.name }}</a></h2>
+</div>
+<div class="lesson-container">
+    {% for lesson in subject.lessons.all %}
+    <div class="lesson-box">
+        {% if lesson.imgforles %}
+        <img class="lesson-cover" src="{{ lesson.imgforles.url }}" alt="{{ lesson.title }}">
+        {% else %}
+        <img class="lesson-cover" src="/media/covers/no_photo.png" alt="{{ lesson.title }}">
+        {% endif %}
+        <h2><a href="{{ lesson.get_absolute_url }}">{{ lesson.title }}</a></h2>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+<!--  in the past it was a "object_detail"  -->

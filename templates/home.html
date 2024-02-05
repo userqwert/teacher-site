@@ -2,5 +2,40 @@
 {% extends "_base.html" %}
 {% block title %}Home{% endblock title %}
 {% block content %}
-<h1>Домашня сторінка.</h1>
+<div class="main-page-content">
+    <div class="greeting">
+        {% if user.is_authenticated %}
+        <p> Вітаю, {{ user.username }}</p>
+        {% else %}
+        <p> Для початку роботи потрібно <a href="{% url 'account_login' %}">увійти</a> </p>
+        {% endif %}
+    </div>
+</div>
+<div class="img-box">
+    <article class="card">
+        <figure>
+            <img src="/media/covers/pexels-cottonbro-studio-4861355.jpg" alt="Добре тому, хто навчився вчитися.">
+            <figcaption>
+                <h3>Добре тому, хто навчився вчитися.</h3>
+            </figcaption>
+        </figure>
+    </article>
+    <article class="card">
+        <figure>
+            <img src="/media/covers/pexels-julia-m-cameron-4144221.jpg"
+                alt="Година роботи навчить більше, ніж день пояснень.">
+            <figcaption>
+                <h3>Велич людини в її здатності мислити.</h3>
+            </figcaption>
+        </figure>
+    </article>
+    <article class="card">
+        <figure>
+            <img src="/media/covers/pexels-julia-m-cameron-4144225.jpg" alt="Вчіться у всіх, не наслідуйте нікому.">
+            <figcaption>
+                <h3>Вчіться у всіх, не наслідуйте нікому.</h3>
+            </figcaption>
+        </figure>
+    </article>
+</div>
 {% endblock content %}

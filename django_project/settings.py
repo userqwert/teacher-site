@@ -17,7 +17,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # его необходимо скрыть через ENV на ФОЛС
+DEBUG = env.bool("DJANGO_DEBUG")  # его необходимо скрыть через ENV на ФОЛС
 
 ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
-    "seven_class.apps.SevenClassConfig",
+    "music.apps.MusicConfig",
+    "work_classes.apps.WorkClassesConfig",
 ]
 
 AUTH_USER_MODEL = "accounts.CustomUser"

@@ -10,5 +10,10 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Local apps
     path("", include("pages.urls")),
-    path("7-klas/", include("seven_class.urls")),
+    # namespace для возможности использовать один шаблон для нескольких УРЛ, его нужно внести в модель и шаблон
+    path("music/", include(("music.urls", "music"), namespace="music")),
+    path(
+        "work-classes/",
+        include(("work_classes.urls", "work_classes"), namespace="work"),
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

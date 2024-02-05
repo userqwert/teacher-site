@@ -2,39 +2,75 @@
 {% load static %}
 {% block title %}{{ lesson.title }}{% endblock title %}
 {% block content %}
+
 <div class="lesson-detail">
-    <h2>Тема уроку: {{ lesson.title }}</h2>
-    <p>якийсь письмовий текст: {{ lesson.content }}</p>
+    <div class="title">
+        <h1>Тема уроку: {{ lesson.title }}</h1>
+    </div>
+
+    {% if lesson.content %}
+    <div class="description">
+        <p>{{ lesson.content }}</p>
+    </div>
+    {% endif %}
 
     <div class="files-box">
         <div class="document-box">
             {% if lesson.docx_file %}
-            <a href="{{ lesson.docx_file}}" target="_blank">
-                <img src="/media/covers/google-docx.png" alt="Google Docx">
-            </a>
+            <div class="google-docx">
+                <a href="{{ lesson.docx_file}}" target="_blank">
+                    <img src="https://cdn.icon-icons.com/icons2/1222/PNG/96/1492616984-7-docs-document-file-data-google-suits_83406.png"
+                        alt="Google Docx">
+                </a>
+            </div>
             {% endif %}
 
             {% if lesson.pdf_file %}
-            <a href="{{ lesson.pdf_file.url }}" target="_blank">
-                <img src="/media/covers/pdf.png" alt="PDF File">
-            </a>
+            <div class="pdf_file">
+                <a href="{{ lesson.pdf_file.url }}" target="_blank">
+                    <img src="https://cdn.icon-icons.com/icons2/3221/PNG/96/pdf_viewer_google_google_apps_icon_196689.png"
+                        alt="PDF File">
+                </a>
+            </div>
             {% endif %}
 
             {% if lesson.google_form %}
-            <a href="{{ lesson.google_form}}" target="_blank">
-                <img src="/media/covers/google-form.png" alt="Google Form">
-            </a>
+            <div class="google-form">
+                <a href="{{ lesson.google_form}}" target="_blank">
+                    <img src="https://cdn.icon-icons.com/icons2/3221/PNG/96/forms_docs_editor_suite_google_google_apps_icon_196692.png"
+                        alt="Google Form">
+                </a>
+            </div>
             {% endif %}
         </div>
     </div>
+
     {% if lesson.youtube_video_url %}
     <div class="youtube-box">
+        <p>Ознайомтеся з корисною інформацією на відео</p>
         <iframe width="560" height="315" src="{{ lesson.youtube_video_url }}" frameborder="0" allowfullscreen></iframe>
+        <!-- <figcaption>
+            <p>Ознайомтеся з корисною інформацією на відео</p>
+        </figcaption> -->
+    </div>
+    {% endif %}
+
+
+    {% if lesson.presentation %}
+    <div class="presentation-box">
+        <p>Ознайомтеся з презентацією</p>
+        <iframe width="560" height="315" src="{{ lesson.presentation }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+
+
+    {% if lesson.les_img %}
+    <div class="learn-img">
+        <img class="lesson-img-learn" src="{{ lesson.les_img.url }}">
     </div>
     {% endif %}
 
     <!-- Add any other details you want to display -->
-
-    <a href="{% url 'object_detail' lesson.subject.id %}">Назад до списку уроків</a>
 </div>
+
 {% endblock content %}

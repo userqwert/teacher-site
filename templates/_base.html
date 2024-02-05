@@ -15,56 +15,36 @@
             /* Добавьте ваш стиль для фонового изображения */
             background-image: url('{% static "images/jessica-ruscello-OQSCtabGkSY-unsplash.jpg" %}');
             background-size: cover;
-            /* чтобы изображение занимало всю ширину и высоту элемента */
-            background-position: center;
-            /* центрируем изображение */
-            background-repeat: no-repeat;
-            /* изображение не повторяется */
+            background-attachment: fixed;
         }
-
-        /* Добавьте любые другие стили, если необходимо */
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Головна сторінка</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targ\ et="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Tog\
-        gle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'object_list' %}">7 клас</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="">8 клас</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="">9 клас</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="">10 клас</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="{% url 'about' %}" class="nav-link px-2 text-white">About</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item mx-2">
-                        <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
-                    </li>
-                    {% endif %}
-                </ul>
+    <div id="header">
+        <div class="main_nav">
+            <a href="/" class="main_page">Головна сторінка</a>
+            <div class="nav_box">
+                <li><a href="{% url 'music:class_list' %}" class="music">Музика</a></li>
+                <li><a href="{% url 'work:class_list' %}" class="work_classes">Трудове заняття</a></li>
+            </div>
+
+            <div class="log_box">
+                <li>
+                    <a href="{% url 'about' %}" class="about">About</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a class="logout" href="{% url 'account_logout' %}">Вихід</a>
+                </li>
+                {% else %}
+                <li>
+                    <a class="login" href="{% url 'account_login' %}">Вхід</a>
+                </li>
+                {% endif %}
             </div>
         </div>
-    </nav>
+    </div>
     <div class="container">
         {% block content %}
         {% endblock content %}
